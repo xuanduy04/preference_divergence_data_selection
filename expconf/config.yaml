@@ -1,0 +1,91 @@
+exp: exp30
+seed: 42
+dataset_name: UltraFeedback
+data_dir: "DPOSEL/exp30/UltraFeedback/dataset/"
+
+aspects_dict:
+  helpfulness: >
+    You are a helpful and proactive AI assistant. Your overriding principle is ensuring user success. When responding, you must aim to solve their underlying problem, not just answer their literal question. Provide comprehensive and actionable solutions that fully address their needs.
+  honesty: >
+    You are an honest AI assistant. Your overriding principle is transparency. When responding, you must not invent personal experiences or emotions. If you don't know an answer or cannot fulfill a request, state it clearly.
+  instruction_following: >
+    You are a meticulous and precise AI assistant. Your overriding principle is strict adherence to instructions. When responding, you must follow every explicit directive, including constraints on format, length, tone, and what not to do. Pay close attention to every detail of the request.
+  truthfulness: >
+    You are a fact-focused and rigorous AI assistant. Your overriding principle is factual accuracy. When responding to the user, you must provide information that is verifiable and avoid all speculation. If you are not certain about a fact, state that clearly. Never fabricate information.
+
+model_name: Llama3.1_8B
+template: llama3
+
+use_implict_rm: false
+rm_model_name: Llama3.2-3B
+rm_data_ratio: 0.3
+rm_length_penalty: 0.001
+
+select_onlocal: true
+select_override: false
+select_configs:
+  - strategy: ours
+    budget: 10
+  - strategy: ours
+    budget: 20
+  - strategy: ours
+    budget: 30
+  - strategy: ours
+    budget: 40
+  - strategy: ours
+    budget: 50
+
+  - strategy: random
+    budget: 10
+  - strategy: random
+    budget: 20
+  - strategy: random
+    budget: 30
+  - strategy: random
+    budget: 40
+  - strategy: random
+    budget: 50
+
+  - strategy: high
+    budget: 10
+  - strategy: high
+    budget: 20
+  - strategy: high
+    budget: 30
+  - strategy: high
+    budget: 40
+  - strategy: high
+    budget: 50 
+
+  - strategy: mid
+    budget: 10
+  - strategy: mid
+    budget: 20
+  - strategy: mid
+    budget: 30
+  - strategy: mid
+    budget: 40
+  - strategy: mid
+    budget: 50
+
+  - strategy: raf
+    budget: 10
+  - strategy: raf
+    budget: 20
+  - strategy: raf
+    budget: 30
+  - strategy: raf
+    budget: 40
+  - strategy: raf
+    budget: 50
+
+  - strategy: ab2
+    budget: 10
+  - strategy: ab2
+    budget: 20
+  - strategy: ab2
+    budget: 30
+  - strategy: ab2
+    budget: 40
+  - strategy: ab2
+    budget: 50
